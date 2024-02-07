@@ -9,22 +9,8 @@
 
 using namespace std;
 
-int paths;
-
-void dfs(vector<vector<int>> &G, vector<bool> &visited, int v, int t) {
-    visited[v] = true;
-    for (int u: G[v]) {
-        if (u == t) {
-            paths++;
-            return;
-        }
-        if (!visited[u]) {
-            dfs(G, visited, u, t);
-        }
-    }
-    return;
-}
-
+const int MAXN = 10000;
+int tin[MAXN];
 
 int main() {_
     int r, c, q;
